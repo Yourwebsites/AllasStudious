@@ -567,28 +567,81 @@ nav {
 
 /* Back Face */
 .flip-card-back {
-  background-color: var(--text-dark);
-  /* Use your existing dark color variable */
-  color: var(--white);
-  /* Use your existing white color variable */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   transform: rotateY(180deg);
   /* Flips the back face initially */
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(60px);
+  /* Add blur effect */
+}
+
+.flip-card-back::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Dark overlay for better text visibility */
+}
+
+.flip-card-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--white);
+  /* Ensure text color is white */
   padding: 1rem;
+  /* Add padding */
+  max-width: 90%;
+  /* Prevent content from touching the edges */
+  margin: 0 auto;
+  /* Center the content */
 }
 
-/* Back Face Text Styling */
-.flip-card-back h3 {
+.flip-card-content h3 {
   font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--white);
+  /* Ensure heading color is white */
 }
 
-.flip-card-back p {
+.flip-card-content p {
   font-size: 1rem;
-  line-height: 1.5;
+  margin-bottom: 1rem;
+  color: var(--white);
+  /* Ensure paragraph color is white */
+}
+
+.flip-card-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  /* Add margin below the list */
+}
+
+.flip-card-content ul li {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  font-style: italic;
+  color: var(--white);
+  /* Ensure list item color is white */
+}
+
+.flip-card-content .btn {
+  margin-top: 1rem;
+  /* Add margin above the button */
+  color: var(--white);
+  /* Ensure button text color is white */
+  border: 2px solid var(--white);
+  /* Ensure button border is white */
 }
 
 
@@ -693,4 +746,34 @@ nav {
 
 .modal-gallery-grid img:hover {
   transform: scale(1.05);
+}
+
+.btn {
+  padding: 1rem 2rem;
+  /* Adjust padding as needed */
+  outline: none;
+  border: 2px solid var(--white);
+  /* Add a border */
+  font-size: 1rem;
+  /* Adjust font size as needed */
+  font-weight: 500;
+  color: var(--white);
+  /* Text color */
+  background-color: transparent;
+  /* Transparent background */
+  border-radius: 5px;
+  /* Rounded corners */
+  transition: 0.3s;
+  cursor: pointer;
+  display: inline-block;
+  /* Ensure the button behaves as a block element */
+  margin-top: 1rem;
+  /* Add margin above the button */
+}
+
+.btn:hover {
+  background-color: var(--white);
+  /* Change background color on hover */
+  color: var(--text-dark);
+  /* Change text color on hover */
 }
