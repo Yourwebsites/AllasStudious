@@ -766,3 +766,11 @@ nav {
 .modal-gallery-grid img:hover {
   transform: scale(1.05);
 }
+.logo-container img {
+  width: 150px;
+  /* Adjust size as needed */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  /* Center the logo */
+}
