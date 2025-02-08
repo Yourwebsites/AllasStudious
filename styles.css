@@ -53,6 +53,25 @@
   background-color: var(--text-light);
 }
 
+.view-gallery-btn {
+  background-color: black;
+  /* Solid black background */
+  border: 2px solid black;
+  /* Black border */
+  color: white;
+  /* White text for contrast */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Smooth transition for hover effect */
+}
+
+/* Optional: Add hover effect */
+.view-gallery-btn:hover {
+  background-color: white;
+  /* Turns white on hover */
+  color: black;
+  /* Black text on hover */
+}
+
 img {
   display: flex;
   width: 100%;
@@ -746,34 +765,4 @@ nav {
 
 .modal-gallery-grid img:hover {
   transform: scale(1.05);
-}
-
-.btn {
-  padding: 1rem 2rem;
-  /* Adjust padding as needed */
-  outline: none;
-  border: 2px solid var(--white);
-  /* Add a border */
-  font-size: 1rem;
-  /* Adjust font size as needed */
-  font-weight: 500;
-  color: var(--white);
-  /* Text color */
-  background-color: transparent;
-  /* Transparent background */
-  border-radius: 5px;
-  /* Rounded corners */
-  transition: 0.3s;
-  cursor: pointer;
-  display: inline-block;
-  /* Ensure the button behaves as a block element */
-  margin-top: 1rem;
-  /* Add margin above the button */
-}
-
-.btn:hover {
-  background-color: var(--white);
-  /* Change background color on hover */
-  color: var(--text-dark);
-  /* Change text color on hover */
 }
